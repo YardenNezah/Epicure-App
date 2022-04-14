@@ -1,0 +1,99 @@
+$sand-80: rgba(232, 196, 122, 0.8);
+$beige: #f9f4ea;
+$light-tan: #f7e0b2;
+$medium-space: 1.33px;
+$small-space: 0.93px;
+$small-size: 10px;
+
+@mixin letter-spacing($px) {
+  letter-spacing: $px;
+}
+@mixin clear-btn {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.nav-btn {
+  background-color: $sand-80;  
+  color: black;  
+  width: 126px;
+  height: 15px;
+  margin: 0 17px 0 0;
+  padding: 15px;
+  border: none;
+  @include letter-spacing($small-space);
+  font-weight: bold;  
+  text-transform: uppercase;  
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.get-app-btn { 
+  display: flex;
+  width: 130px; 
+  height: 38px;
+  border-radius: 6.7px;
+  border: 0.5px solid black;
+  font-size: 9.2px;
+  margin: 7px;
+  @include clear-btn;
+}
+
+.submit-btn {
+  background-color: $sand-80;
+  border: 1px solid $light-tan;
+  color: white;
+  border-radius: 5px;
+  padding: 10px 40px;
+  font-size: 20px;
+  margin: 30px;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: $light-tan;
+  color: $beige;
+}
+.app-name {
+  font-size: 11px;
+  margin: 0;
+}
+
+.app-icon {
+  bottom: $small-size;
+  right: 3px;
+  position: relative;
+}
+
+.app-content {
+  padding-top: 5px;
+}
+
+.active-link {
+  font-weight: bold;
+  border-bottom: 2px solid $light-tan;
+  padding-bottom: 25px;
+}
+
+.close-nav-bar {
+  font-size: 25px;
+  border: none;
+  margin: $small-size 320px 0 0;
+  @include clear-btn;
+}
+
+.footer-li {
+  list-style: none;
+  color: black;
+  top: 100%;
+  position: relative;
+  @include letter-spacing($medium-space);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 800px) {
+  .footer-li {
+    top: 0;
+    margin: $small-size;
+  }
+}

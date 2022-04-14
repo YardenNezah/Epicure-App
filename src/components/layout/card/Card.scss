@@ -1,0 +1,216 @@
+$white-11: rgba(255, 255, 255, 0.8);
+$sand-80: rgba(232, 196, 122, 0.8);
+$beige: #f9f4ea;
+$light-grey: #fafafa;
+$light-tan: #f7e0b2;
+$medium-size: 30px;
+$brown-grey: #979797;
+$large-space: 1.67px;
+$small-space: 0.93px;
+
+@mixin letter-spacing($px) {
+  letter-spacing: $px;
+}
+
+.white-card {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  margin: 0 auto;
+  width: 70%;
+  height: 100px;
+  padding: 5px 33px 22px;
+  background-color: $white-11;
+  top: 70px;
+  position: relative;
+}
+
+.grey-card {
+  width: 100%;
+  background-color: $light-grey;
+  padding: 5px 0;
+  img {
+    display: block;
+    padding: 15px;
+  }
+}
+
+.beige-card {
+  background-color: $beige;
+  width: 155px;
+  height: 237px;
+  margin: 0 20px 60px 20px;
+  img {
+    width: 155px;
+    height: 122px;
+  }
+}
+
+.data-item {
+  margin: 0 auto;
+  position: relative;
+}
+
+
+.dish-img {
+  width: 259px;
+  height: 208px;
+}
+
+.dish-title {
+  font-size: 27px;
+  margin: 10px;
+  padding: 0 65px;
+}
+
+.dish-description {
+  padding: 0 45px;
+  font-size: 17.3px;
+  position: absolute;
+  bottom: 15%;
+}
+
+.dish-icon {
+  position: absolute;
+  bottom: 10%;
+  left: 43%;
+  width: 35px;
+  height: $medium-size;
+}
+
+.wrapper {
+  display: inline-block;
+  bottom: 1%;
+  right: 10%;
+  position: absolute;
+}
+
+.outter {
+  float: left;
+  width: 70px;
+  border-bottom: 0.5px solid $brown-grey;
+  margin-top: 8%;
+}
+
+.outter-span {
+  float: left;
+  margin: 0 10px;
+  @include letter-spacing($large-space);
+  font: {
+    size: 25px;
+    weight: bold;
+  }
+}
+
+.ils {
+  font-size: 16px;
+}
+
+.data-content {
+  height: 240px;
+}
+
+.data-small-item {
+  background-color: $beige;
+  position: relative;
+  font-size: 14px;
+  width: 157px;
+  height: 300px;
+  .dish-small-img{
+    width: 157px;
+    height: 100px;
+  }
+  .dish-small-title {
+    font-size: 22px;
+    padding: 0 8px;
+  }
+  .dish-small-description {
+    padding: 0 25px;
+    bottom: 5%;
+  }
+  .small-wrapper {
+    bottom: 1%;
+    right: 15%;
+    position: absolute;
+  }
+  .outter-span {
+    font-size: 14px;
+    }
+    .outter {
+      width: $medium-size;
+    }
+}
+
+@media screen and (min-width: 800px) {
+  .white-card {
+    width: 54%;
+    height: 200px;
+    top: 30%;
+  }
+  .data-small-item {
+    font-size: 22px;
+    width: 235px;
+    height: 360px;
+    .dish-small-img{
+      width: 235px;
+      height: 150px;
+    }
+    .dish-small-description {
+      padding: 0 45px;
+    }
+    .small-wrapper {
+      bottom: 1%;
+      right: 25%;
+    }
+  }
+  .data-item {
+    width: 360px;
+    height: 500px;
+    .dish-img, 
+    .restaurant-img {
+      width: 360px;
+    }
+  }
+  .data-item:first-child {
+    height: 357px;
+  }
+  .dish-title {
+    font-size: 38px;
+    padding: 0 85px;
+  }
+  .beige-card {
+    width: 342px;
+    height: 339px;
+    img {
+      width: 342px;
+      height: 212px;
+    }
+    h3 {
+      font-size: 38px;
+      margin: 0;
+    }
+    p {
+      font-size: 23px;
+    }
+  }
+  .dish-description {
+    padding: 0 55px;
+    top: 55%;    
+    font-size: 24px;
+  }
+  .wrapper {
+    right: 24%;
+  }
+  .chef-container {
+    display: flex;
+    padding: 0;
+  }
+  .chef-description {
+    font-size: 25px;
+    text-align: left;
+    padding: 5px;
+  }
+  #data {
+    height: 550px;
+    margin-bottom: 60px;
+  }
+}

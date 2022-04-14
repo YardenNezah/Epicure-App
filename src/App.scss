@@ -1,0 +1,25 @@
+$white: #fff;
+$beige: #f9f4ea;
+$light-grey: #fafafa;  
+$sand-20: rgba(232, 196, 122, 0.2);
+$pumpkin-90: rgba(222, 146, 0, 0.9);
+$sand-80: rgba(232, 196, 122, 0.8);
+$white-11: rgba(255, 255, 255, 0.8);
+$black: #000;
+$light-tan: #f7e0b2;
+
+
+@font-face {
+  font-family: HelveticaNeue;
+  src: local(""), url('./fonts/Nimbus-Sans-D-OT-Ultra-Light_32757.ttf');
+}
+
+body {
+  font-family: HelveticaNeue;
+  text-align: center;
+  color: black;
+}
+
+p {
+  font-size: 14px;
+}

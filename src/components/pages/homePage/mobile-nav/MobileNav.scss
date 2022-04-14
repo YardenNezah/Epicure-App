@@ -1,0 +1,25 @@
+.nav-btns {
+  display: flex;
+  padding: 45px;
+  font: {
+    weight: bold;
+    size: 14px;
+  }
+}
+
+@media screen and (min-width: 450px) {
+  .nav-btns {
+    margin-left: 12%;
+  }
+}
+@media screen and (min-width: 600px) {
+  .nav-btns {
+    margin-left: 20%;
+  }
+}
+@media screen and (min-width: 800px) {
+  .nav-btns {
+    display: none;
+  }
+}
+

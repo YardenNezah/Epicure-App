@@ -1,0 +1,331 @@
+$light-tan: #f7e0b2;
+$white-11: rgba(255, 255, 255, 0.8);
+$brown-grey: #979797;
+$beige: #f9f4ea;
+$small-space: 0.93px;
+$medium-space: 1.33px;
+$large-space: 1.67px;
+$small-size: 10px;
+$medium-size: 30px;
+$large-size: 40px;
+$largest-size: 60px;
+
+@mixin letter-spacing($px) {
+  letter-spacing: $px;
+}
+
+.card-bg {
+  background: {
+    image: image-set(
+      url("../../../assets/screen-shot-2019-01-06-at-10-56-44.png") 1x,
+      url("../../../assets/hero-picture.png") 2x
+    );
+    repeat: no-repeat;
+    size: cover;
+  }
+  height: 270px;
+}
+
+.data-section {
+  margin: 80px 0;
+}
+
+h3 {
+  @include letter-spacing($medium-space);
+  font: {
+    weight: bold;
+    size: 20px;
+  }
+}
+
+.data-container {
+  display: flex;
+  margin-bottom: $large-size;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.sub-title {
+  font-size: 14px;
+  margin-top: 70px;
+}
+
+.slider-div {
+  padding: 20px;
+}
+
+.get-app-container {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0 $largest-size 0;
+}
+
+.nav-container {
+  padding: $small-size;
+}
+
+.data-item {
+  background-color: $light-tan;
+  margin: 0;
+  position: relative;
+  width: 259px;
+}
+
+.popular-item {
+  width: 206px;
+  margin: 0;
+}
+
+.icons-container {
+  display: flex;
+  justify-content: space-around;
+  img {
+    display: block;
+  }
+}
+
+.restaurant-img {
+  width: 206px;
+  height: 224px;
+}
+
+.restaurant-name {
+  font-size: 25px;
+  @include letter-spacing($large-space);
+}
+
+.restaurant-content {
+  height: 80px;
+}
+
+.restaurant-title {
+  font-weight: bold;
+}
+
+.epicure-title {
+  padding: 0 45px;
+}
+
+.all-restaurants-desktop-btn {
+  display: none;
+  text-decoration: none;
+  color: black;
+  font-size: $medium-size;
+  font-weight: bold;
+  text-align: right;
+}
+
+.chef-img {
+  position: relative;
+  width: 334px;
+  height: 240px;
+  margin: 0 auto;
+  h1 {
+    @include letter-spacing($small-space);
+    width: 334.9px;
+    padding: 12px;
+    background-color: $white-11;
+    position: absolute;
+    left: 50%;
+    top: 80%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.chef-left-title {
+  text-align: left;
+  margin-left: 12px;
+}
+
+.chef-item {
+  background-color: $beige;
+  width: 155px;
+  height: 237px;
+  margin: 0 0 $largest-size 20px;
+}
+
+.chef-name {
+  bottom: 20px;
+  font-size: 20px;
+  position: relative;
+}
+
+.chef-description {
+  margin: 20px $large-size;
+  font-size: 13.5px;
+  @include letter-spacing($small-space);
+}
+
+.chef-page-description {
+  margin: 40px 100px;
+  font-size: 20px;
+  @include letter-spacing($small-space);
+}
+
+.chef-restaurants-container {
+  overflow: scroll;
+  display: flex;
+}
+
+.chef-restaurants-container::-webkit-scrollbar {
+  display: none;
+}
+
+.chef-restaurant-item {
+  background-color: $beige;
+  height: 237.4px;
+  margin: $small-size;
+  .chef-restaurant-img {
+   width: 153.6px;
+    height: 149px;
+  }
+}
+
+.chefs-restaurants {
+  margin-bottom: 100px;
+  margin-left: 15px;
+}
+
+@media screen and (min-width: 500px) {
+  .chef-description {
+    padding: 0 100px;
+  }
+  .chefs-restaurants {
+    margin-left: 100px;
+  }
+}
+
+.icons {
+  margin-top: 50px;
+}
+
+@media screen and (min-width: 650px) {
+  .chef-description {
+    padding: 0 150px;
+  }
+  .chefs-restaurants {
+    margin-left: 150px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .epicure-title {
+    padding: 0 $medium-size;
+    font-size: 32px;
+  }
+  .card-bg {
+    height: 696px;
+  }
+  .sub-title {
+    font-size: $medium-size;
+    margin: $large-size 0;
+  }
+  .icons-title {
+    font-size: $medium-size;
+    margin: $large-size 0 0 0;
+  }
+  .restaurant-img {
+    height: 224px;
+  }
+  .restaurant-title {
+    font-size: $medium-size;
+  }
+  .restaurant-name,
+  .dish-title {
+    font-size: $large-size;
+  }
+  .icons-container {
+    justify-content: center;
+    padding-bottom: 20px;
+    margin: 5px 0;
+    div {
+      font-size: 25px;
+      margin: 20px;
+      .vegan-icon {
+        width: 67px;
+        height: 67px;
+      }
+      .spicy-icon {
+        width: 80px;
+        height: $largest-size;
+      }
+      .veg-icon {
+        width: $largest-size;
+        height: $largest-size;
+      }
+    }
+    div:nth-child(3) {
+      position: relative;
+      bottom: 6px;
+    }
+  }
+  .get-app-container {
+    justify-content: left;
+    margin-left: 195px;
+  }
+  .data-item {
+    background-color: $beige;
+  }
+  .all-restaurants-desktop-btn {
+    display: block;
+    margin-right: 19%;
+  }
+  .slider-div {
+    margin: 0 140px;
+  }
+}
+
+@media screen and (min-width: 1050px) {
+  .epicure-title {
+    padding: 0 80px;
+    font-size: 35px;
+  }
+  .chef-description {
+    margin: 0 100px 0 $largest-size;
+    padding: $small-size;
+  }
+  .chef-page-description {
+    margin: 40px 150px;
+  }
+  .chef-name {
+    bottom: $medium-size;
+    font-size: 25px;
+  }
+  .all-restaurants-desktop-btn {
+    margin-right: 16%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .chef-description {
+    margin: 0 290px 0 50px;
+  }
+  .chef-container {
+    margin-left: 260px;
+  }
+  .chefs-restaurants {
+    margin: 0 0 100px 240px;
+  }
+  .chef-left-title,
+  h3 {
+    font-size: $medium-size;
+  }
+  .epicure-title {
+    padding: 0 200px;
+  }
+  .get-app-container {
+    margin-left: 255px;
+  }
+  .all-restaurants-desktop-btn {
+    margin-right: 11.5%;
+  }
+  .chef-restaurant-item {
+    height: 357px;
+    .chef-restaurant-img {
+      width: 231px;
+      height: 224px;
+    }
+  }
+}

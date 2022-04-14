@@ -1,0 +1,49 @@
+$small-size: 10px;
+
+.about-logo {
+    margin: 0 auto;
+}
+
+.about-title {
+    padding-top: $small-size;
+}
+
+.about-description {
+    font-size: 14px;
+    padding: 0 50px;
+    margin-bottom: $small-size;
+}
+
+@media screen and (min-width: 500px) {
+    .about-container {
+        padding: $small-size 80px;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .about-container {
+        display: flex;
+        padding: $small-size 140px;
+    }
+    .about-title {
+        font-size: 30px;
+        margin-left: 260px;
+        text-align: left;
+    }
+    .about-description {
+        font-size: 22px;
+        width: 440px;
+        padding: 0 19px;
+    }
+    .about-logo {
+        width: 178px;
+        height: 166px;
+    }
+}
+
+@media screen and (min-width: 1000px) {
+    .about-container {
+        padding: $small-size 240px;
+        text-align: left;
+    }
+} 

@@ -1,0 +1,62 @@
+.restaurants-grid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+.categories-div {
+  margin: 15px 12px 25px 20px;
+  display: flex;
+  justify-content: space-between;
+  button {
+    font-size: 15px;
+    margin: 1px;
+    text-decoration: none;
+    list-style: none;
+    letter-spacing: 1.92px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 100 !important;
+  }
+}
+
+.to-restaurant-btn {
+  text-decoration: none;
+  color: black;
+  margin: 0 auto;
+}
+
+.all-restaurants-page h2{
+  letter-spacing: 1.54px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.to-restaurant {
+  text-decoration: none;
+  color: black;
+}
+
+.restaurants-grid-item {
+  margin: 30px;
+}
+@media screen and (min-width: 1200px) {
+  .restaurants-grid {
+    grid-template-columns: 33% 33% 33%;
+    margin: 0 100px;
+  }
+  .categories-div {
+    justify-content: center;
+  }
+  .categories-div {
+    margin: 20px;
+    button {
+      font-size: 18px;
+      margin: 10px;
+    }
+  }
+  .all-restaurants-page h2 {
+    display: none;
+  }
+}
