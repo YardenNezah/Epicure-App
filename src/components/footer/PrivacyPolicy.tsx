@@ -7,7 +7,6 @@ const PrivacyPolicy = () => {
     <Fragment>
       <Header></Header>
       <div>Privacy Policy</div>
-      <Footer></Footer>
     </Fragment>
   );
 };

@@ -40,6 +40,7 @@ const ChefPage = () => {
             <Link
               to={`/restaurant/${restaurant.name}`}
               className="to-restaurant-btn" key={restaurant.name}
+              onClick={()=> window.scrollTo(0, 0)}
             >
               <ChefCard
                 key={restaurant._id}

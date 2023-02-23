@@ -4,7 +4,7 @@ const CartItem = ({ dish }: any) => {
   return (
     <tr>
       <td>
-        <Link to={`/dishPage/${dish.name}`}>
+        <Link to={`/dishPage/${dish.name}`} onClick={()=> window.scrollTo(0, 0)}>
           <img src={dish.mobileImg} alt="dish" className="dish" />
         </Link>
       </td>

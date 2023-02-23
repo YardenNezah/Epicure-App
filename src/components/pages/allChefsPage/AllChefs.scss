@@ -4,12 +4,14 @@
   margin: 0 auto;
 }
 
-.all-chefs-page h2 {
+.all-chefs-page {
+h2 {
   letter-spacing: 1.54px;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
   margin-bottom: 40px;
+}
 }
 
 .restaurants-grid {
@@ -19,6 +21,7 @@
 
 .chefs-grid {
   margin-top: 70px;
+  position: relative;
 }
 
 @media screen and (min-width: 1200px) {

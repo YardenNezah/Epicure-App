@@ -4,6 +4,7 @@ const PopularItem = ({restaurant}:any) => {
     return (
       <Link
         to={`/restaurant/${restaurant.name}`}
+        onClick={()=> window.scrollTo(0, 0)}
         className="to-restaurant-btn">
         <div className="data-item popular-item">
           <img

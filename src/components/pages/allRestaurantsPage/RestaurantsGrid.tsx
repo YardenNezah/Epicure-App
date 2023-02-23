@@ -7,17 +7,21 @@ import { Fragment, useEffect, useState } from "react";
 import { fetchRestaurants } from "../../../store/RestaurantDataSlice";
 import { fetchNewRestaurants } from "../../../store/newRestaurantsSlice";
 import { fetchPopularRestaurants } from "../../../store/popularRestaurantsSlice";
-import { fetchOpenRestaurants} from "../../../store/openRestaurantsSlice";
+import { fetchOpenRestaurants } from "../../../store/openRestaurantsSlice";
+import Footer from "../../footer/Footer";
 
 const RestaurantsGrid = ({ filter }: any) => {
   const [pageNumber, setPageNumber] = useState(1);
 
-
   const dispatch = useAppDispatch();
   const { restaurants } = useSelector((state: any) => state.restaurants);
   const { newRestaurants } = useSelector((state: any) => state.newRestaurants);
-  const { popularRestaurants } = useSelector((state: any) => state.popularRestaurants);
-  const { openRestaurants } = useSelector((state: any) => state.openRestaurants);
+  const { popularRestaurants } = useSelector(
+    (state: any) => state.popularRestaurants
+  );
+  const { openRestaurants } = useSelector(
+    (state: any) => state.openRestaurants
+  );
 
   useEffect(() => {
     dispatch(fetchRestaurants());
@@ -33,7 +37,10 @@ const RestaurantsGrid = ({ filter }: any) => {
         key={page}
         className="page"
         to={`/restaurants/${filter}/${page}`}
-        onClick={() => setPageNumber(page)}
+        onClick={() => {
+          setPageNumber(page);
+          window.scrollTo(0, 0);
+        }}
       >
         {page}
       </Link>
@@ -49,6 +56,7 @@ const RestaurantsGrid = ({ filter }: any) => {
                 to={`/restaurant/${item.name}`}
                 className="to-restaurant-btn"
                 key={item._id}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 <BeigeCard
                   key={item.name}
@@ -70,6 +78,7 @@ const RestaurantsGrid = ({ filter }: any) => {
                 to={`/restaurant/${item.name}`}
                 className="to-restaurant-btn"
                 key={item._id}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 <BeigeCard
                   key={item.name}
@@ -92,6 +101,7 @@ const RestaurantsGrid = ({ filter }: any) => {
                 to={`/restaurant/${item.name}`}
                 className="to-restaurant-btn"
                 key={item._id}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 <BeigeCard
                   key={item.name}
@@ -101,11 +111,11 @@ const RestaurantsGrid = ({ filter }: any) => {
                 ></BeigeCard>
               </Link>
             ))}
-          </div>       
+          </div>
         </Fragment>
-        )}
+      )}
 
-{filter === "open" && pageNumber === 1 && (
+      {filter === "open" && pageNumber === 1 && (
         <Fragment>
           <div className="restaurants-grid">
             {openRestaurants.map((item: any) => (
@@ -113,6 +123,7 @@ const RestaurantsGrid = ({ filter }: any) => {
                 to={`/restaurant/${item.name}`}
                 className="to-restaurant-btn"
                 key={item._id}
+                onClick={() => window.scrollTo(0, 0)}
               >
                 <BeigeCard
                   key={item.name}
@@ -122,9 +133,10 @@ const RestaurantsGrid = ({ filter }: any) => {
                 ></BeigeCard>
               </Link>
             ))}
-          </div>       
+          </div>
         </Fragment>
-        )}
+      )}
+      <Footer />
     </Fragment>
   );
 };

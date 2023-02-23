@@ -7,7 +7,6 @@ const ContactUs = () => {
     <Fragment>
       <Header></Header>
       <div>Contact Us</div>
-      <Footer></Footer>
     </Fragment>
   );
 };

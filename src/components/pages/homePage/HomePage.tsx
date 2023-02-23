@@ -46,8 +46,8 @@ const HomePage = () => {
       <div className="data-section">
         <p className="sub-title">THE POPULAR RESTAURANTS IN EPICURE : </p>
         <PopularRestaurant data={restaurants} key={restaurants._id}/>
-        <Link to={"/restaurants/all/1"} className="all-restaurants-desktop-btn">
-          All Restaurants {">>"}{" "}
+        <Link to={"/restaurants/all/1"} className="all-restaurants-desktop-btn" onClick={()=> window.scrollTo(0, 0)}>
+          All Restaurants {">>"}
         </Link>
         <p className="sub-title">SIGNATURE DISH OF :</p>
         <SignatureDish dishes={dishes} key={dishes._id}/>

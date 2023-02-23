@@ -10,7 +10,7 @@ const AddToBag = (props: any) => {
     console.log(addedDish);
   };
   return (
-    <Link to="/cart/:addedDish">
+    <Link to="/cart/:addedDish" onClick={()=> window.scrollTo(0, 0)}>
       <button className="add-to-bag-btn" onClick={(e) => addToBag}>
         ADD TO BAG
       </button>

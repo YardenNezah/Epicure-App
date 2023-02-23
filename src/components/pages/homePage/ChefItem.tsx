@@ -32,6 +32,7 @@ const ChefItem = ({ chef, restaurants }:any) => {
                 <Link
                   to={`/restaurant/${restaurant.name}`}
                   className="to-restaurant" key={restaurant._id}
+                  onClick={()=> window.scrollTo(0, 0)}
                 >
                   <div className="chef-restaurant-item">
                     <img

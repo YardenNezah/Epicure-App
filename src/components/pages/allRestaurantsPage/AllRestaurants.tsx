@@ -21,8 +21,6 @@ const AllRestaurants: React.FC = () => {
       </div>
       <br /> 
       <RestaurantsGrid filter={filter} />
-      <hr />
-      <Footer />
     </div>
   );
 };

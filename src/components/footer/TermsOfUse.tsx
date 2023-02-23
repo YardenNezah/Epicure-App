@@ -7,7 +7,6 @@ const TermsOfUse = () => {
     <Fragment>
       <Header></Header>
       <div>Terms Of Use:</div>
-      <Footer></Footer>
     </Fragment>
   );
 };

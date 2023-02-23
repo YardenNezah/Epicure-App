@@ -24,7 +24,10 @@ const ChefsGrid = () => {
         key={page}
         className="page"
         to={`/chefs/${page}`}
-        onClick={() => setPageNumber(page)}
+        onClick={() => {
+          setPageNumber(page);
+          window.scrollTo(0, 0)
+        }}
       >
         {page}
       </Link>
@@ -35,7 +38,7 @@ const ChefsGrid = () => {
     <Fragment>
       <div className="restaurants-grid chefs-grid">
         {chefs.slice(pageNumber * 6 - 6, pageNumber * 6).map((item: any) => (
-          <Link to={`/chef/${item.chefName}`} className="to-chef-btn" key={item._id}>
+          <Link to={`/chef/${item.chefName}`} className="to-chef-btn" key={item._id} onClick={() => window.scrollTo(0, 0)}>
             <BeigeCard
               key={item.chefName}
               title={item.chefName}

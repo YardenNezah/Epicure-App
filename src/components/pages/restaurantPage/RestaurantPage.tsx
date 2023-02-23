@@ -2,7 +2,7 @@ import clock from "../../../assets/clock-icon.svg";
 import DishSmallCard from "../../layout/card/DishSmallCard";
 import "./RestaurantPage.scss";
 import DishPage from "../dishPage/DishPage";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Footer from "../../footer/Footer";
 import Header from "../../header/Header";
 import { useSelector } from "react-redux";
@@ -104,12 +104,7 @@ const RestaurantPage = ({ filter }: any) => {
           )}
           <nav className="categories-div">
             {mealsTypes.map((typeName) => (
-              <button
-                onClick={() => setFilterType(typeName)}
-                className="type-meal-link" key={typeName}
-              >
-                {typeName}
-              </button>
+                <Link to="/restaurants/all/1" onClick={() => setFilterType(typeName)} className={`type-meal-link ${filter === "all" ? 'all':'filterLink'}`} key={typeName}>All</Link>
             ))}
           </nav>
 
