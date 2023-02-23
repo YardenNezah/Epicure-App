@@ -5,8 +5,6 @@ const AddToBag = (props: any) => {
   const [addedDish, setAddedDish]: any = useState([]);
 
   const addToBag = (e: any) => {
-    // setAddedDish([quantityNumber,choosenSide , quantityNumber]);
-    // console.log(choosenSide, addedDish);
     e.preventDefault();
     setAddedDish(props.dish);
     console.log(addedDish);

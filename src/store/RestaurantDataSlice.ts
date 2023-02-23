@@ -23,7 +23,7 @@ const restaurantsSlice = createSlice({
       })
       .addCase(fetchRestaurants.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.restaurants= action.payload.result;        
+        state.restaurants= action.payload.result;    
       })
       .addCase(fetchRestaurants.rejected, (state, action) => {
         state.isLoading = false;

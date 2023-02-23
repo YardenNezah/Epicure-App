@@ -81,6 +81,7 @@ const SignIn = () => {
         </p>
         <b>{feedback}</b>
       </form>
+      <div className="signin-footer"></div>
       <Footer />
     </Fragment>
   );

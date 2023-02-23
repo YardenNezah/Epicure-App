@@ -8,7 +8,7 @@ const MobileNav: React.FC= () => {
     <GreyCard>
     <div className='nav-btns'>
         <NavButton content={'chefs'} component={'/chefs'}></NavButton>
-        <NavButton content={'restaurants'} component={'/restaurants'}></NavButton>
+        <NavButton content={'restaurants'} component={'/restaurants/all/1'}></NavButton>
     </div>
     </GreyCard>
 

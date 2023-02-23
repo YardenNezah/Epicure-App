@@ -8,7 +8,7 @@ const ChefItem = ({ chef, restaurants }:any) => {
       {chef.map((chefDetails:any) => {
         if (chefDetails.chefOfTheWeek === true) {
           return (
-            <div className="chef-container">
+            <div className="chef-container" key={chefDetails._id}>
               <div className="chef-img">
                 <img
                   src={chefDetails.chefImage}
@@ -31,7 +31,7 @@ const ChefItem = ({ chef, restaurants }:any) => {
               return (
                 <Link
                   to={`/restaurant/${restaurant.name}`}
-                  className="to-restaurant" key={restaurant.name}
+                  className="to-restaurant" key={restaurant._id}
                 >
                   <div className="chef-restaurant-item">
                     <img

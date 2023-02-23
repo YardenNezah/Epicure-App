@@ -1,3 +1,5 @@
+$sand-80: rgba(232, 196, 122, 0.8);
+$beige: #f9f4ea;
 .restaurants-grid {
   display: grid;
   grid-template-columns: 50% 50%;
@@ -7,16 +9,16 @@
   margin: 15px 12px 25px 20px;
   display: flex;
   justify-content: space-between;
-  button {
+  .filterLink {
     font-size: 15px;
-    margin: 1px;
+    margin: 0 10px;
     text-decoration: none;
     list-style: none;
     letter-spacing: 1.92px;
     background: none;
     border: none;
     cursor: pointer;
-    font-weight: 100 !important;
+    color: black;
   }
 }
 
@@ -41,22 +43,55 @@
 .restaurants-grid-item {
   margin: 30px;
 }
-@media screen and (min-width: 1200px) {
+
+.pagination {
+  display: flex;
+  margin-left: 40%;
+  .page {
+    background-color: $beige;
+    color: black;
+    font-size: 25px;
+    text-decoration: none;
+    border: 1px solid black;
+    padding: 2px 10px;
+    border-radius: 25px;
+    margin: 5px;
+  }
+}
+
+.all, .new, .popular, .open {
+  color: $sand-80;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media screen and (min-width: 800px) {
+  .pagination {
+    margin-left: 44%;
+  }
+}
+
+@media screen and (min-width: 1100px) {
   .restaurants-grid {
     grid-template-columns: 33% 33% 33%;
     margin: 0 100px;
   }
-  .categories-div {
+  .categories-div {   
     justify-content: center;
-  }
-  .categories-div {
     margin: 20px;
-    button {
+    .filterLink {
       font-size: 18px;
-      margin: 10px;
+      margin: 0 10px;
     }
   }
   .all-restaurants-page h2 {
     display: none;
+  }
+  .page {
+    font-size: 30px;
+    padding: 5px 15px;
+  }
+  .pagination {
+    margin-left: 45%;
   }
 }

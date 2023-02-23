@@ -5,10 +5,6 @@ $light-tan: #f7e0b2;
   height: 100%;
 }
 
-.restaurant-page {
-  scroll-behavior: smooth;
-}
-
 .type-meal-link {
   text-decoration: none;
   color: black;
@@ -18,9 +14,7 @@ $light-tan: #f7e0b2;
 }
 
 .type-meal-link:active {
-  font-weight: bold;
-  border-bottom: 2px solid $light-tan;
-  padding-bottom: 25px;
+  color: $light-tan;
 }
 
 .restaurants-container {
@@ -81,19 +75,37 @@ $light-tan: #f7e0b2;
   margin: 0 auto;
 }
 
+.dishes-container {
+  display: flex;
+  overflow: scroll;
+  justify-content: left;
+  flex-direction: row;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media screen and (min-width: 800px) {
   .restaurant-page-img {
     width: 76%;
     height: 395px;
   }
   .restaurants-container {
-   margin: 0 2px;
+    margin: 0 2px;
   }
   .type-meal-link {
     font-size: 23px;
   }
-  .type-container h2 {
-    font-size: 25px;
-    top: 36px;
+  .type-container {
+    h2 {
+      font-size: 25px;
+      top: 36px;
+    }
+  }
+  .dishes-container {
+    display: flex;
+    flex-direction: row;
+    overflow: scroll;
+    justify-content: center;
   }
 }

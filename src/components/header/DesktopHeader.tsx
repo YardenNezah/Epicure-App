@@ -17,7 +17,7 @@ const DesktopHeader = () => {
           {" "}
           EPICURE{" "}
         </Link>
-        <NavLinkTemplate content={"Restaurants"} to={"/restaurants"} />
+        <NavLinkTemplate content={"Restaurants"} to={"/restaurants/all/1"} />
         <NavLinkTemplate content={"Chefs"} to={"/chefs"} />
       </div>
 

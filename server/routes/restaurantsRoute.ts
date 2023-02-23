@@ -6,6 +6,8 @@ const restaurantController= new restaurantsController;
 
 restaurantRouter.get("/", restaurantController.getRestaurants);
 
+restaurantRouter.get("/:filter", restaurantController.filterRestaurants);
+
 restaurantRouter.get("/:id", restaurantController.getRestaurantById);
 
 restaurantRouter.post("/", restaurantController.createRestaurant);

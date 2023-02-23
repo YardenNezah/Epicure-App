@@ -11,7 +11,7 @@ import { useEffect, Fragment, useState } from "react";
 import { fetchRestaurants } from "../../../store/RestaurantDataSlice";
 import { fetchDishes } from "../../../store/dishDataSlice";
 
-const RestaurantPage = () => {
+const RestaurantPage = ({ filter }: any) => {
   const [openDishCard, setOpenDishCard] = useState(false);
   const [dishName, setDishName] = useState("");
 
@@ -22,7 +22,7 @@ const RestaurantPage = () => {
   useEffect(() => {
     dispatch(fetchRestaurants());
     dispatch(fetchDishes());
-  },[]);
+  }, []);
 
   const openDishCardHandler = (dish: string) => {
     setOpenDishCard(true);
@@ -39,7 +39,30 @@ const RestaurantPage = () => {
     (item: any) => item.restaurant === params.restaurantName
   );
 
-  const mealsTypes: string[] = ["Breakfast", "Lunch", "Dinner"];
+  const mealsTypes: string[] = ["all", "Breakfast", "Lunch", "Dinner"];
+  const [filterType, setFilterType] = useState("all");
+
+  const passFilter = (item: any) => {
+    switch (filterType) {
+      case "all":
+        return true;
+      case "Breakfast":
+        if (item.dishType === "Breakfast") {
+          return true;
+        } else return false;
+      case "Lunch":
+        if (item.dishType === "Lunch") {
+          return true;
+        } else return false;
+      case "Dinner":
+        if (item.dishType === "Dinner") {
+          return true;
+        } else return false;
+      default:
+        return true;
+    }
+  };
+  const filteredArr = restaurantDishes.filter((item: any) => passFilter(item));
 
   const opening = restaurantDetails[0].openingHour.split(":")[0] * 1;
   const closing = restaurantDetails[0].closingHour.split(":")[0] * 1;
@@ -53,13 +76,14 @@ const RestaurantPage = () => {
           <button
             className="dish-container"
             onClick={() => setOpenDishCard(false)}
-          ></button>{" "}
+          ></button>
           <button
             className="close-dish-page"
             onClick={() => setOpenDishCard(false)}
           >
             X
-          </button>{" "}
+          </button>
+          <br />
           <DishPage dish={dishName}></DishPage>
         </Fragment>
       )}
@@ -79,27 +103,25 @@ const RestaurantPage = () => {
             </div>
           )}
           <nav className="categories-div">
-            {mealsTypes.map((type) => (
-              <a href={`#${type}`} className="type-meal-link">
-                {type}
-              </a>
+            {mealsTypes.map((typeName) => (
+              <button
+                onClick={() => setFilterType(typeName)}
+                className="type-meal-link" key={typeName}
+              >
+                {typeName}
+              </button>
             ))}
           </nav>
+
           <div className="meal-by-type">
-            {mealsTypes.map((type) => {
-              return (
-                <Fragment>
-                  <div className="type-container" id={type}>
-                    <h2>{type}</h2>
-                    <div className="type-line"></div>
-                  </div>
-                  <div className="restaurants-container">
-                    {restaurantDishes.map((dish: any) => {
-                      if (dish.dishType === mealsTypes[0])
-                        return (
+            {mealsTypes.map((type: any) => (
+                <div className="dishes-container" key={type}>
+                  {filteredArr.map(
+                    (dish: any) =>
+                      type === dish.dishType && (
                           <button
                             className="to-dish-btn"
-                            onClick={() => openDishCardHandler(dish.name)}
+                            onClick={() => openDishCardHandler(dish.name)} key={dish._id}
                           >
                             <div className="restaurant-item">
                               <DishSmallCard
@@ -112,12 +134,10 @@ const RestaurantPage = () => {
                               ></DishSmallCard>
                             </div>
                           </button>
-                        );
-                    })}
-                  </div>
-                </Fragment>
-              );
-            })}
+                      )
+                  )}
+                </div>
+            ))}
           </div>
           <Footer />
         </div>

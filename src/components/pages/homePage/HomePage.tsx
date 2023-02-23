@@ -45,16 +45,16 @@ const HomePage = () => {
       <MobileNav />
       <div className="data-section">
         <p className="sub-title">THE POPULAR RESTAURANTS IN EPICURE : </p>
-        <PopularRestaurant data={restaurants}/>
-        <Link to={"AllRestaurants"} className="all-restaurants-desktop-btn">
+        <PopularRestaurant data={restaurants} key={restaurants._id}/>
+        <Link to={"/restaurants/all/1"} className="all-restaurants-desktop-btn">
           All Restaurants {">>"}{" "}
         </Link>
         <p className="sub-title">SIGNATURE DISH OF :</p>
-        <SignatureDish dishes={dishes}/>
+        <SignatureDish dishes={dishes} key={dishes._id}/>
         <Icons />
       </div>
       <p className="sub-title">CHEF OF THE WEEK :</p>
-      <ChefItem chef={chefs} restaurants={restaurants}/>
+      <ChefItem chef={chefs} restaurants={restaurants} key={chefs._id}/>
       <About />
       <Footer />
     </Fragment>

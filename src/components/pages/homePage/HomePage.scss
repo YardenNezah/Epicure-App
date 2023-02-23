@@ -41,6 +41,7 @@ h3 {
 .data-container {
   display: flex;
   margin-bottom: $large-size;
+  z-index: 1;
   overflow: scroll;
   ::-webkit-scrollbar {
     display: none;
@@ -53,13 +54,14 @@ h3 {
 }
 
 .slider-div {
-  padding: 20px;
+  padding: 5px 0 5px 15px;
 }
 
 .get-app-container {
   display: flex;
   justify-content: center;
   margin: 20px 0 $largest-size 0;
+  z-index: 1;
 }
 
 .nav-container {
@@ -68,26 +70,22 @@ h3 {
 
 .data-item {
   background-color: $light-tan;
-  margin: 0;
+  margin: 10px;
   position: relative;
   width: 259px;
-}
-
-.popular-item {
-  width: 206px;
-  margin: 0;
 }
 
 .icons-container {
   display: flex;
   justify-content: space-around;
+  z-index: 1;
   img {
     display: block;
   }
 }
 
 .restaurant-img {
-  width: 206px;
+  width: 259px;
   height: 224px;
 }
 
@@ -121,7 +119,7 @@ h3 {
   position: relative;
   width: 334px;
   height: 240px;
-  margin: 0 auto;
+  margin: 5px auto;
   h1 {
     @include letter-spacing($small-space);
     width: 334.9px;
@@ -167,6 +165,7 @@ h3 {
 .chef-restaurants-container {
   overflow: scroll;
   display: flex;
+  z-index: 1;
 }
 
 .chef-restaurants-container::-webkit-scrollbar {
@@ -220,7 +219,7 @@ h3 {
   }
   .sub-title {
     font-size: $medium-size;
-    margin: $large-size 0;
+    margin:40px 0 10px 0;
   }
   .icons-title {
     font-size: $medium-size;
@@ -267,6 +266,7 @@ h3 {
   }
   .data-item {
     background-color: $beige;
+    margin: 0;
   }
   .all-restaurants-desktop-btn {
     display: block;

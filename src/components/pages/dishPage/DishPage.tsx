@@ -49,12 +49,14 @@ const DishPage = (props: { dish: string }) => {
           srcSet={`${dishDetails.desktopImage} 800w`}
         ></img>
         <div className="data-content">
-          <img
-            src={dishDetails.icon}
-            alt="img"
-            className="dish-page-icon-desktop"
-          ></img>
-          <h3 className="dish-title">{dishDetails.name}</h3>
+          <h3 className="dish-title">
+            <img
+              src={dishDetails.icon}
+              alt="img"
+              className="dish-page-icon-desktop"
+            ></img>
+            {dishDetails.name}
+          </h3>
           <p className="dish-page-description">{dishDetails.description}</p>
           <img
             src={dishDetails.icon}
@@ -72,9 +74,7 @@ const DishPage = (props: { dish: string }) => {
           </div>
         </div>
       </div>
-      <br />
       {inputsContainer("Choose a side")}
-      <p>
         {dishDetails.side.map((side: any) => (
           <Input
             content={side}
@@ -84,11 +84,10 @@ const DishPage = (props: { dish: string }) => {
             value={""}
             minLength={1}
             maxLength={2}
+            key={side}
           />
         ))}
-      </p>
       {inputsContainer("Changes")}
-      <p>
         {dishDetails.changes.map((change: any) => (
           <Input
             content={change}
@@ -98,9 +97,9 @@ const DishPage = (props: { dish: string }) => {
             value={""}
             minLength={1}
             maxLength={2}
+            key={change}
           />
         ))}
-      </p>
       {inputsContainer("Quantity")}
       <div className="quantity-container">
         <button onClick={removeDish}>-</button>{" "}

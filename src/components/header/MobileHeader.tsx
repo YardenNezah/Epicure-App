@@ -56,7 +56,7 @@ const MobileHeader = () => {
             <hr />
           </div>           
           {content.map((navLi) => (
-            <li className="hamburger-nav-list">
+            <li className="hamburger-nav-list" key={navLi}>
               <NavLinkTemplate content={navLi} to={navLi.replace(/\s/g, "")} />
             </li>
           ))}

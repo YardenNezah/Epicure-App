@@ -17,6 +17,7 @@ app.use(express.json())
 app.use(express.urlencoded({extended: true}))
 
 app.use('/restaurants', restaurantRouter)
+//app.use('/restaurants/:filter/:page', restaurantRouter)
 app.use('/chefs', chefRouter)
 app.use('/dishes', dishRouter)
 app.use('/auth', authRouter)

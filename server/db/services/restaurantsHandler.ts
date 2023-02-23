@@ -2,12 +2,29 @@ import restaurant from "../models/restaurant.js";
 
 class restaurantsHandler {
   static async getRestaurantsHandler() {
-    const result = await restaurant.find();
+    const result = await restaurant.find().limit(6);
     return result;
   }
 
-  static async getRestaurantByIdHandler(id: any) {
-    const result = await restaurant.findById(id);
+  static async filterRestaurantsHandler(filter: any) {
+    const date = new Date();
+    const now: any = date.getHours()+'00';
+    if (filter === "new")
+      return await restaurant.find({ isNewRestaurant: true }).limit(6);
+    if (filter === "popular") {     
+      return await restaurant.find({ isPopular: true }).limit(6);
+    }
+    if (filter === "open") {
+      const open: any = await restaurant.find({closingHour: {$gte: now}});
+      return await open;
+    }
+    if(!filter) {
+      filter = "all";
+    }
+  }
+
+  static async getRestaurantByIdHandler(_id: any) {
+    const result = await restaurant.findById(_id);
     return result;
   }
 

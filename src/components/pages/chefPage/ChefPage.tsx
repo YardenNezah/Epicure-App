@@ -42,7 +42,7 @@ const ChefPage = () => {
               className="to-restaurant-btn" key={restaurant.name}
             >
               <ChefCard
-                key={restaurant.name}
+                key={restaurant._id}
                 title={restaurant.name}
                 detail=""
                 restaurantImg={restaurant.mobileImage}

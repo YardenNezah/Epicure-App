@@ -17,6 +17,9 @@
   grid-template-columns: 50% 50%;
 }
 
+.chefs-grid {
+  margin-top: 70px;
+}
 
 @media screen and (min-width: 1200px) {
   .all-chefs-page h2 {
@@ -25,5 +28,8 @@
   .restaurants-grid {
     display: grid;
     grid-template-columns: 33% 33% 33%;
+  }
+  .chefs-grid {
+    margin-top: 100px;
   }
 }

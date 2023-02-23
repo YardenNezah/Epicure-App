@@ -8,14 +8,12 @@ const ChefCard: React.FC<{
   detail: string;
   restaurantImg: string;
   restaurantName: string;
-  key: string;
 }> = (props) => {
   return (
         <BeigeCard
           img={props.restaurantImg}
           title={props.restaurantName}
           detail={""}
-          key={props.key}
         ></BeigeCard>
   );
 };
